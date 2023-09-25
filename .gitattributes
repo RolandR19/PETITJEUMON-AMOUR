@@ -1,2 +1,23 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+import random
+
+def jeu():
+    nombre_secret = random.randint(1, 10)
+    essais = 0
+
+    print("Bienvenue dans le jeu! Devinez un nombre entre 1 et 10.")
+
+    while essais < 5:
+        essai = int(input("Entrez votre nombre: "))
+
+        if essai == nombre_secret:
+            print("Félicitations! Vous avez deviné le nombre secret.")
+            print("Le mot de passe est: CLER 1971")
+            break
+        else:
+            print("Désolé, ce n'est pas le bon nombre. Essayez encore.")
+            essais += 1
+
+    if essais == 3:
+        print("Vous avez utilisé tous vos essais. Le jeu est terminé.")
+
+jeu()
