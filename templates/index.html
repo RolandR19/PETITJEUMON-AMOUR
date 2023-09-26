@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Jeu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Bienvenue dans Mon Jeu</h1>
+    <p>Devinez le nombre secret pour déverrouiller le code.</p>
+
+    <div class="game-container">
+        <form method="post" action="/verifier">
+            <label for="essai">Votre Guess:</label>
+            <input type="number" id="essai" name="essai" min="1" max="10" required>
+            <button type="submit">Vérifier</button>
+        </form>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <p>Essais restants : {{ essais }}</p>
+</body>
+</html>
