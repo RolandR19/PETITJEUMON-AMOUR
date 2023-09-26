@@ -1,23 +1,21 @@
-import random
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Jeu</title>
+</head>
+<body>
+    <h1>Bienvenue dans Mon Jeu</h1>
+    <p>Devinez le nombre secret pour déverrouiller le code.</p>
 
-def jeu():
-    nombre_secret = random.randint(1, 10)
-    essais = 0
+    <div class="game-container">
+        <form method="post" action="/verifier">
+            <label for="essai">Votre Guess:</label>
+            <input type="number" id="essai" name="essai" min="1" max="10" required>
+            <button type="submit">Vérifier</button>
+        </form>
+    </div>
 
-    print("Bienvenue dans le jeu! Devinez un nombre entre 1 et 10.")
-
-    while essais < 5:
-        essai = int(input("Entrez votre nombre: "))
-
-        if essai == nombre_secret:
-            print("Félicitations! Vous avez deviné le nombre secret.")
-            print("Le mot de passe est: CLER 1971")
-            break
-        else:
-            print("Désolé, ce n'est pas le bon nombre. Essayez encore.")
-            essais += 1
-
-    if essais == 3:
-        print("Vous avez utilisé tous vos essais. Le jeu est terminé.")
-
-jeu()
+    <p>Essais restants : {{ essais }}</p>
+</body>
+</html>
